@@ -55,8 +55,8 @@
     }
 
     .splash-logo {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
       animation: gentleFade 3s ease;
       filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
     }
@@ -81,29 +81,28 @@
     }
 
     .cover-section {
-      height: 25vh;
+      height: 18vh;
       background: linear-gradient(135deg, var(--primary-blue) 0%, var(--orange) 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-end;
-      padding-bottom: 70px;
+      padding-bottom: 50px;
       position: relative;
-      box-shadow: var(--shadow-subtle);
     }
 
     .profile-box {
-      width: 140px;
-      height: 140px;
-      border-radius: 25px;
+      width: 100px;
+      height: 100px;
+      border-radius: 18px;
       overflow: hidden;
-      border: 5px solid var(--white);
+      border: 4px solid var(--white);
       box-shadow: var(--shadow);
       background-color: var(--white);
       position: absolute;
-      bottom: -70px;
+      bottom: -50px;
       z-index: 10;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
     }
 
     .profile-box img {
@@ -113,18 +112,17 @@
     }
 
     .content-section {
-      padding: 90px 20px 25px;
+      padding: 60px 15px 15px;
       background-color: var(--white);
       text-align: center;
-      height: 75vh;
+      height: 82vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
     }
 
     .app-title {
       font-family: 'Comfortaa', cursive;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 700;
       margin-bottom: 5px;
       background: linear-gradient(90deg, var(--primary-blue), var(--orange));
@@ -135,67 +133,59 @@
 
     .company-name {
       font-family: 'Comfortaa', cursive;
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--gray);
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       font-weight: 500;
     }
 
     .description {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--gray);
-      margin-bottom: 25px;
-      padding: 0 10px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      padding: 0 8px;
       line-height: 1.5;
+      flex-shrink: 0;
     }
 
     .buttons-grid {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 15px;
+      gap: 10px;
       margin-top: auto;
     }
 
     .button-row {
       display: flex;
-      gap: 12px;
+      gap: 10px;
     }
 
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 15px;
-      border-radius: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
       text-decoration: none;
       font-family: 'Roboto', sans-serif;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       transition: all 0.3s ease;
       box-shadow: var(--shadow-light);
       border: none;
       cursor: pointer;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+      flex: 1;
     }
 
     .btn:active {
-      transform: translateY(2px);
+      transform: translateY(1px);
       box-shadow: var(--shadow-subtle);
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-
-    .btn-small {
-      flex: 1;
-    }
-
-    .btn-large {
-      width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     .btn-whatsapp {
@@ -217,27 +207,26 @@
     }
 
     .btn-icon {
-      margin-right: 8px;
-      font-size: 1.1rem;
-      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+      margin-right: 6px;
+      font-size: 1rem;
     }
 
     .store-buttons {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
     .store-button {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 15px;
-      border-radius: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
       text-decoration: none;
       font-family: 'Comfortaa', cursive;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       transition: all 0.3s ease;
       box-shadow: var(--shadow-light);
       background-color: var(--dark-gray);
@@ -246,21 +235,20 @@
     }
 
     .store-button:active {
-      transform: translateY(2px);
+      transform: translateY(1px);
       box-shadow: var(--shadow-subtle);
     }
 
     .store-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       background-color: #000000;
     }
 
     .store-logo {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
-      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
     }
 
     .ios-disabled {
@@ -275,17 +263,17 @@
     }
 
     .ios-disabled::after {
-      content: "La version d'essaie gratuit n'est pas disponible pour iOS. Revenez à partir du 5 Novembre 2025 pour installer la version open de l'app directement depuis le App Store";
+      content: "Version d'essaie iOS indisponible. Retournez le 5 Novembre 2025";
       position: absolute;
-      bottom: -85px;
+      bottom: -70px;
       left: 50%;
       transform: translateX(-50%);
-      width: 260px;
+      width: 220px;
       background-color: var(--dark-gray);
       color: white;
-      padding: 8px;
-      border-radius: 6px;
-      font-size: 0.75rem;
+      padding: 6px;
+      border-radius: 5px;
+      font-size: 0.7rem;
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
@@ -301,42 +289,42 @@
       visibility: visible;
     }
 
-    /* Responsive adjustments */
+    /* Ajustements pour très petits écrans */
     @media (max-width: 480px) {
       .cover-section {
-        height: 22vh;
-        padding-bottom: 60px;
+        height: 16vh;
+        padding-bottom: 40px;
       }
       
       .profile-box {
-        width: 120px;
-        height: 120px;
-        border-radius: 20px;
-        bottom: -60px;
+        width: 90px;
+        height: 90px;
+        border-radius: 16px;
+        bottom: -45px;
       }
       
       .content-section {
-        padding: 80px 15px 20px;
-        height: 78vh;
+        padding: 55px 12px 12px;
+        height: 84vh;
       }
       
       .app-title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
       }
       
       .company-name {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
       
       .description {
-        font-size: 0.85rem;
-        margin-bottom: 20px;
+        font-size: 0.8rem;
+        margin-bottom: 15px;
       }
       
       .ios-disabled::after {
-        width: 240px;
-        font-size: 0.7rem;
-        bottom: -80px;
+        width: 200px;
+        font-size: 0.65rem;
+        bottom: -65px;
       }
     }
 
@@ -346,63 +334,72 @@
       }
       
       .cover-section {
-        height: 20vh;
+        height: 15vh;
       }
       
       .profile-box {
-        width: 110px;
-        height: 110px;
-        bottom: -55px;
+        width: 80px;
+        height: 80px;
+        bottom: -40px;
       }
       
       .content-section {
-        padding: 75px 10px 15px;
-        height: 80vh;
+        padding: 50px 10px 10px;
+        height: 85vh;
       }
       
       .btn, .store-button {
-        padding: 10px 12px;
-        font-size: 0.85rem;
+        padding: 8px 10px;
+        font-size: 0.8rem;
       }
     }
 
     @media (max-height: 700px) {
       .cover-section {
-        height: 22vh;
+        height: 15vh;
       }
       
       .content-section {
-        height: 78vh;
-        padding: 80px 15px 20px;
+        height: 85vh;
+        padding: 50px 12px 12px;
       }
       
       .profile-box {
-        width: 120px;
-        height: 120px;
-        bottom: -60px;
-      }
-    }
-
-    @media (max-height: 600px) {
-      .cover-section {
-        height: 20vh;
-      }
-      
-      .content-section {
-        height: 80vh;
-        padding: 70px 15px 15px;
-      }
-      
-      .profile-box {
-        width: 100px;
-        height: 100px;
-        bottom: -50px;
-        border-radius: 18px;
+        width: 80px;
+        height: 80px;
+        bottom: -40px;
       }
       
       .description {
         font-size: 0.8rem;
         margin-bottom: 15px;
+      }
+    }
+
+    @media (max-height: 600px) {
+      .cover-section {
+        height: 14vh;
+      }
+      
+      .content-section {
+        height: 86vh;
+        padding: 45px 10px 10px;
+      }
+      
+      .profile-box {
+        width: 70px;
+        height: 70px;
+        bottom: -35px;
+        border-radius: 14px;
+      }
+      
+      .description {
+        font-size: 0.75rem;
+        margin-bottom: 12px;
+      }
+      
+      .app-title {
+        font-size: 1.3rem;
       }
     }
   </style>
@@ -438,17 +435,17 @@
       <div class="buttons-grid">
         <!-- Première ligne - 2 boutons -->
         <div class="button-row">
-          <a href="https://www.whatsapp.com/channel/0029Vb7e0L8ADTOHKXIk4Z1A" class="btn btn-small btn-whatsapp">
+          <a href="https://www.whatsapp.com/channel/0029Vb7e0L8ADTOHKXIk4Z1A" class="btn btn-whatsapp">
             <i class="fab fa-whatsapp btn-icon"></i> Nous rejoindre
           </a>
-          <a href="https://wa.me/242061173738" class="btn btn-small btn-contact">
+          <a href="https://wa.me/242061173738" class="btn btn-contact">
             <i class="fas fa-phone-alt btn-icon"></i> Nous joindre
           </a>
         </div>
         
         <!-- Boutons de téléchargement -->
         <div class="store-buttons">
-          <a href="HorizonClass.apk" download class="store-button">
+          <a href="https://drive.google.com/uc?export=download&id=1xj_1B0kfm1-3P3gqcLkUKxHzmtL2QOio" class="store-button">
             <img src="logo-playstore.png" alt="Google Play" class="store-logo">
             Télécharger sur Google Play
           </a>
