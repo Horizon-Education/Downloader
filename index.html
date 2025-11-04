@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suppression de Compte - Horizon Education</title>
+  <title>Gestion des Données - Horizon Education</title>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -24,6 +24,7 @@
       --whatsapp-dark-green: #0C6B5F;
       --warning-red: #e74c3c;
       --warning-dark-red: #c0392b;
+      --success-green: #27ae60;
     }
 
     * {
@@ -47,13 +48,13 @@
     /* Container principal avec largeur limitée */
     .main-container {
       width: 100%;
-      max-width: 500px;
+      max-width: 550px;
       background: var(--white);
       border-radius: 20px;
       box-shadow: var(--shadow);
       overflow: hidden;
       height: auto;
-      max-height: 90vh;
+      max-height: 95vh;
       overflow-y: auto;
     }
 
@@ -89,44 +90,106 @@
     }
 
     .content-section {
-      padding: 60px 20px 25px;
+      padding: 60px 25px 30px;
       background-color: var(--white);
-      text-align: center;
     }
 
     .app-title {
       font-family: 'Comfortaa', cursive;
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       font-weight: 700;
       margin-bottom: 5px;
       background: linear-gradient(90deg, var(--primary-blue), var(--orange));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .company-name {
+      font-family: 'Comfortaa', cursive;
+      font-size: 1rem;
+      color: var(--dark-gray);
+      margin-bottom: 25px;
+      font-weight: 500;
+      text-align: center;
     }
 
     .page-subtitle {
       font-family: 'Comfortaa', cursive;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: var(--gray);
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       font-weight: 500;
+      text-align: center;
     }
 
+    /* Navigation par onglets */
+    .tabs-container {
+      display: flex;
+      margin-bottom: 25px;
+      background: var(--light-gray);
+      border-radius: 12px;
+      padding: 5px;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 12px 15px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      color: var(--gray);
+    }
+
+    .tab.active {
+      background: var(--white);
+      color: var(--primary-blue);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Sections de contenu */
     .info-section {
       text-align: left;
       margin-bottom: 25px;
       background: var(--light-gray);
-      padding: 15px;
-      border-radius: 10px;
+      padding: 18px;
+      border-radius: 12px;
       border-left: 4px solid var(--primary-blue);
+    }
+
+    .warning-section {
+      background: #fff8f8;
+      border-left: 4px solid var(--warning-red);
+    }
+
+    .success-section {
+      background: #f0fff4;
+      border-left: 4px solid var(--success-green);
     }
 
     .info-title {
       font-weight: 600;
       color: var(--dark-gray);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-size: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .info-title i {
+      margin-right: 8px;
     }
 
     .info-content {
@@ -137,12 +200,12 @@
 
     .data-list {
       list-style-type: none;
-      margin: 10px 0;
+      margin: 12px 0;
     }
 
     .data-list li {
-      padding: 5px 0;
-      padding-left: 20px;
+      padding: 6px 0;
+      padding-left: 22px;
       position: relative;
       font-size: 0.9rem;
     }
@@ -151,42 +214,21 @@
       content: "•";
       color: var(--primary-blue);
       position: absolute;
-      left: 5px;
-    }
-
-    .warning-box {
-      background-color: #fff8f8;
-      border: 1px solid #ffcccc;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 20px 0;
-      text-align: center;
-    }
-
-    .warning-icon {
-      color: var(--warning-red);
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    .warning-text {
-      color: var(--warning-red);
-      font-size: 0.9rem;
-      font-weight: 500;
+      left: 8px;
+      font-weight: bold;
     }
 
     .procedure-box {
       background-color: var(--light-blue);
-      border-radius: 10px;
-      padding: 15px;
+      border-radius: 12px;
+      padding: 18px;
       margin: 20px 0;
-      text-align: left;
     }
 
     .procedure-title {
       font-weight: 600;
       color: var(--dark-blue);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       text-align: center;
     }
 
@@ -196,8 +238,8 @@
     }
 
     .procedure-steps li {
-      padding: 8px 0;
-      padding-left: 30px;
+      padding: 10px 0;
+      padding-left: 35px;
       position: relative;
       font-size: 0.9rem;
     }
@@ -207,19 +249,35 @@
       content: counter(step-counter);
       background: var(--primary-blue);
       color: white;
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       position: absolute;
       left: 0;
-      top: 8px;
+      top: 10px;
       font-size: 0.8rem;
       font-weight: bold;
     }
 
+    .verification-info {
+      background: #fffaf0;
+      border: 1px solid #ffd699;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 15px 0;
+      font-size: 0.85rem;
+    }
+
+    .verification-title {
+      font-weight: 600;
+      color: #e67e00;
+      margin-bottom: 5px;
+    }
+
+    /* Boutons */
     .buttons-grid {
       display: flex;
       flex-direction: column;
@@ -232,7 +290,7 @@
       align-items: center;
       justify-content: center;
       padding: 14px 15px;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       font-family: 'Roboto', sans-serif;
       font-weight: 600;
@@ -242,6 +300,7 @@
       border: none;
       cursor: pointer;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+      text-align: center;
     }
 
     .btn:active {
@@ -263,13 +322,22 @@
       background-color: var(--whatsapp-dark-green);
     }
 
-    .btn-contact {
+    .btn-email {
       background-color: var(--primary-blue);
       color: white;
     }
 
-    .btn-contact:hover {
+    .btn-email:hover {
       background-color: var(--dark-blue);
+    }
+
+    .btn-app {
+      background-color: var(--success-green);
+      color: white;
+    }
+
+    .btn-app:hover {
+      background-color: #219653;
     }
 
     .btn-icon {
@@ -281,15 +349,17 @@
       font-size: 0.8rem;
       color: var(--gray);
       margin-top: 15px;
+      text-align: center;
       font-style: italic;
     }
 
     footer {
-      margin-top: 25px;
-      padding-top: 15px;
+      margin-top: 30px;
+      padding-top: 20px;
       border-top: 1px solid var(--light-gray);
       font-size: 0.75rem;
       color: var(--gray);
+      text-align: center;
     }
 
     /* Ajustements pour très petits écrans */
@@ -300,6 +370,7 @@
       
       .main-container {
         max-height: 95vh;
+        max-width: 100%;
       }
       
       .cover-section {
@@ -315,15 +386,20 @@
       }
       
       .content-section {
-        padding: 50px 15px 20px;
+        padding: 50px 18px 20px;
       }
       
       .app-title {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
       
       .page-subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
+      }
+      
+      .tab {
+        padding: 10px 12px;
+        font-size: 0.85rem;
       }
     }
 
@@ -356,62 +432,153 @@
 
     <!-- Section contenu -->
     <div class="content-section">
-      <h1 class="app-title">Horizon Education</h1>
-      <p class="page-subtitle">Demande de suppression de compte</p>
+      <h1 class="app-title">Horizon Class</h1>
+      <p class="company-name">Horizon Education</p>
       
-      <div class="warning-box">
-        <div class="warning-icon">
-          <i class="fas fa-exclamation-triangle"></i>
+      <p class="page-subtitle">Gestion de votre compte et données</p>
+
+      <!-- Navigation par onglets -->
+      <div class="tabs-container">
+        <div class="tab active" data-tab="delete-account">Suppression de compte</div>
+        <div class="tab" data-tab="partial-delete">Suppression partielle</div>
+      </div>
+
+      <!-- Contenu suppression de compte -->
+      <div class="tab-content active" id="delete-account">
+        <div class="info-section warning-section">
+          <div class="info-title">
+            <i class="fas fa-exclamation-triangle"></i>
+            Attention - Action irréversible
+          </div>
+          <div class="info-content">
+            La suppression de votre compte est définitive. Toutes vos données personnelles, progression et historique seront définitivement effacés et ne pourront pas être récupérés.
+          </div>
         </div>
-        <p class="warning-text">La suppression de votre compte est irréversible. Toutes vos données seront définitivement effacées.</p>
-      </div>
 
-      <div class="info-section">
-        <div class="info-title">Données qui seront supprimées</div>
-        <ul class="data-list">
-          <li>Profil utilisateur (nom, prénom, date de naissance)</li>
-          <li>Données de contact (email, téléphone)</li>
-          <li>Données éducatives (niveau d'étude, établissement, progression, résultats)</li>
-          <li>Données de profil (photo de profil, adresse physique)</li>
-          <li>Historique d'utilisation et données techniques</li>
-          <li>Contenu généré (réponses aux exercices, contributions)</li>
-        </ul>
-      </div>
-
-      <div class="info-section">
-        <div class="info-title">Données pouvant être conservées</div>
-        <div class="info-content">
-          Certaines données peuvent être conservées pour des obligations légales (facturation, obligations fiscales) conformément à nos CGU. Ces données sont archivées de manière sécurisée et supprimées à l'expiration des délais légaux.
+        <div class="info-section">
+          <div class="info-title">
+            <i class="fas fa-check-circle"></i>
+            Méthodes de suppression disponibles
+          </div>
+          <div class="info-content">
+            Vous pouvez supprimer votre compte de deux manières :
+            <ul class="data-list">
+              <li><strong>Directement dans l'application</strong> (méthode recommandée)</li>
+              <li><strong>En nous contactant</strong> via WhatsApp ou email</li>
+            </ul>
+          </div>
         </div>
+
+        <div class="procedure-box">
+          <div class="procedure-title">Procédure de suppression via contact</div>
+          <ol class="procedure-steps">
+            <li>Contactez-nous via WhatsApp ou email en utilisant les boutons ci-dessous</li>
+            <li>Un message pré-formaté sera généré pour vous</li>
+            <li>Complétez le message avec vos informations personnelles</li>
+            <li>Nous vérifierons votre identité pour des raisons de sécurité</li>
+            <li>Votre compte sera supprimé après confirmation</li>
+          </ol>
+        </div>
+
+        <div class="verification-info">
+          <div class="verification-title">Vérification d'identité requise</div>
+          <p>Pour confirmer que vous êtes bien le propriétaire du compte, nous vous demanderons de fournir :</p>
+          <ul class="data-list">
+            <li>Adresse email du compte</li>
+            <li>Nom d'utilisateur</li>
+            <li>Nom et prénom</li>
+            <li>Date de naissance</li>
+            <li>Établissement scolaire</li>
+          </ul>
+        </div>
+
+        <div class="buttons-grid">
+          <a href="https://wa.me/242061173738?text=Bonjour%20Horizon%20Education,%0A%0AJe%20souhaite%20demander%20la%20suppression%20définitive%20de%20mon%20compte%20Horizon%20Class.%0A%0A📋%20INFORMATIONS%20DU%20COMPTE%20:%0A•%20Adresse%20email%20:%20[VOTRE_EMAIL]%0A•%20Nom%20d'utilisateur%20:%20[VOTRE_NOM_UTILISATEUR]%0A•%20Mot%20de%20passe%20:%20[VOTRE_MOT_DE_PASSE]%0A%0A👤%20INFORMATIONS%20PERSONNELLES%20:%0A•%20Nom%20et%20prénom%20:%20[VOTRE_NOM_PRENOM]%0A•%20Date%20de%20naissance%20:%20[VOTRE_DATE_NAISSANCE]%0A•%20Établissement%20scolaire%20:%20[VOTRE_ECOLE]%0A%0A📝%20RAISON%20DE%20LA%20DEMANDE%20:%0A[PRÉCISEZ%20VOS%20RAISONS]%0A%0ACordialement," class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp btn-icon"></i> Demander la suppression via WhatsApp
+          </a>
+          
+          <a href="mailto:info.horizoneducationtablet@gmail.com?subject=Demande%20de%20suppression%20de%20compte%20Horizon%20Class&body=Bonjour%20Horizon%20Education,%0A%0AJe%20souhaite%20demander%20la%20suppression%20définitive%20de%20mon%20compte%20Horizon%20Class.%0A%0A📋%20INFORMATIONS%20DU%20COMPTE%20:%0A•%20Adresse%20email%20:%20[VOTRE_EMAIL]%0A•%20Nom%20d'utilisateur%20:%20[VOTRE_NOM_UTILISATEUR]%0A•%20Mot%20de%20passe%20:%20[VOTRE_MOT_DE_PASSE]%0A%0A👤%20INFORMATIONS%20PERSONNELLES%20:%0A•%20Nom%20et%20prénom%20:%20[VOTRE_NOM_PRENOM]%0A•%20Date%20de%20naissance%20:%20[VOTRE_DATE_NAISSANCE]%0A•%20Établissement%20scolaire%20:%20[VOTRE_ECOLE]%0A%0A📝%20RAISON%20DE%20LA%20DEMANDE%20:%0A[PRÉCISEZ%20VOS%20RAISONS]%0A%0ACordialement," class="btn btn-email">
+            <i class="fas fa-envelope btn-icon"></i> Demander la suppression par email
+          </a>
+
+          <div class="btn btn-app">
+            <i class="fas fa-mobile-alt btn-icon"></i> Supprimer directement dans l'application
+          </div>
+        </div>
+
+        <p class="response-time">Le traitement des demandes de suppression prend généralement jusqu'à 48 heures, mais peut varier selon les circonstances.</p>
       </div>
 
-      <div class="procedure-box">
-        <div class="procedure-title">Procédure de suppression</div>
-        <ol class="procedure-steps">
-          <li>Contactez-nous via WhatsApp en utilisant le bouton ci-dessous</li>
-          <li>Précisez votre demande : "Suppression de compte"</li>
-          <li>Indiquez votre nom d'utilisateur et adresse email associée</li>
-          <li>Nous traiterons votre demande sous 48 heures maximum</li>
-          <li>Vous recevrez une confirmation une fois la suppression effectuée</li>
-        </ol>
-      </div>
+      <!-- Contenu suppression partielle -->
+      <div class="tab-content" id="partial-delete">
+        <div class="info-section">
+          <div class="info-title">
+            <i class="fas fa-info-circle"></i>
+            Suppression partielle des données
+          </div>
+          <div class="info-content">
+            Vous pouvez demander la suppression de certaines données spécifiques de votre compte sans supprimer l'intégralité de celui-ci.
+          </div>
+        </div>
 
-      <!-- Boutons d'action -->
-      <div class="buttons-grid">
-        <a href="https://wa.me/242061173738?text=Bonjour%20Horizon%20Education,%20je%20souhaite%20demander%20la%20suppression%20de%20mon%20compte%20et%20de%20mes%20données." class="btn btn-whatsapp">
-          <i class="fab fa-whatsapp btn-icon"></i> Demander la suppression via WhatsApp
-        </a>
-        
-        <a href="mailto:info@horizonteducationtablette.com?subject=Demande%20de%20suppression%20de%20compte&body=Bonjour,%20je%20souhaite%20demander%20la%20suppression%20de%20mon%20compte%20et%20de%20mes%20données.%0A%0ANom%20d'utilisateur%20:%20%0AAdresse%20email%20:%20" class="btn btn-contact">
-          <i class="fas fa-envelope btn-icon"></i> Demander par email
-        </a>
-      </div>
+        <div class="info-section warning-section">
+          <div class="info-title">
+            <i class="fas fa-exclamation-triangle"></i>
+            Important à savoir
+          </div>
+          <div class="info-content">
+            <ul class="data-list">
+              <li>Certaines données sont essentielles au fonctionnement de l'application</li>
+              <li>La suppression de données vitales peut affecter votre expérience utilisateur</li>
+              <li>Nous nous réservons le droit de refuser les demandes qui impacteraient le service</li>
+              <li>Vous serez informé de l'approbation ou du refus de votre demande</li>
+            </ul>
+          </div>
+        </div>
 
-      <p class="response-time">Votre demande sera traitée dans un délai maximum de 48 heures.</p>
+        <div class="info-section">
+          <div class="info-title">
+            <i class="fas fa-database"></i>
+            Données pouvant être supprimées partiellement
+          </div>
+          <div class="info-content">
+            <ul class="data-list">
+              <li>Photo de profil</li>
+              <li>Adresse physique</li>
+              <li>Historique de navigation spécifique</li>
+              <li>Certaines données de profil optionnelles</li>
+              <li>Contenu généré spécifique</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="procedure-box">
+          <div class="procedure-title">Procédure de demande de suppression partielle</div>
+          <ol class="procedure-steps">
+            <li>Contactez-nous en précisant les données que vous souhaitez supprimer</li>
+            <li>Nous évaluerons l'impact sur le fonctionnement de l'application</li>
+            <li>Vous recevrez une réponse sous 48 heures</li>
+            <li>Si approuvé, les données seront supprimées</li>
+            <li>Vous serez informé de la complétion de la demande</li>
+          </ol>
+        </div>
+
+        <div class="buttons-grid">
+          <a href="https://wa.me/242061173738?text=Bonjour%20Horizon%20Education,%0A%0AJe%20souhaite%20demander%20la%20suppression%20partielle%20de%20mes%20données%20sur%20Horizon%20Class.%0A%0A📋%20INFORMATIONS%20DU%20COMPTE%20:%0A•%20Adresse%20email%20:%20[VOTRE_EMAIL]%0A•%20Nom%20d'utilisateur%20:%20[VOTRE_NOM_UTILISATEUR]%0A%0A👤%20INFORMATIONS%20PERSONNELLES%20:%0A•%20Nom%20et%20prénom%20:%20[VOTRE_NOM_PRENOM]%0A%0A🗑️%20DONNÉES%20À%20SUPPRIMER%20:%0A[PRÉCISEZ%20LES%20DONNÉES%20QUE%20VOUS%20SOUHAITEZ%20SUPPRIMER]%0A%0A📝%20RAISON%20DE%20LA%20DEMANDE%20:%0A[PRÉCISEZ%20VOS%20RAISONS]%0A%0ACordialement," class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp btn-icon"></i> Demande partielle via WhatsApp
+          </a>
+          
+          <a href="mailto:info.horizoneducationtablet@gmail.com?subject=Demande%20de%20suppression%20partielle%20de%20données%20Horizon%20Class&body=Bonjour%20Horizon%20Education,%0A%0AJe%20souhaite%20demander%20la%20suppression%20partielle%20de%20mes%20données%20sur%20Horizon%20Class.%0A%0A📋%20INFORMATIONS%20DU%20COMPTE%20:%0A•%20Adresse%20email%20:%20[VOTRE_EMAIL]%0A•%20Nom%20d'utilisateur%20:%20[VOTRE_NOM_UTILISATEUR]%0A%0A👤%20INFORMATIONS%20PERSONNELLES%20:%0A•%20Nom%20et%20prénom%20:%20[VOTRE_NOM_PRENOM]%0A%0A🗑️%20DONNÉES%20À%20SUPPRIMER%20:%0A[PRÉCISEZ%20LES%20DONNÉES%20QUE%20VOUS%20SOUHAITEZ%20SUPPRIMER]%0A%0A📝%20RAISON%20DE%20LA%20DEMANDE%20:%0A[PRÉCISEZ%20VOS%20RAISONS]%0A%0ACordialement," class="btn btn-email">
+            <i class="fas fa-envelope btn-icon"></i> Demande partielle par email
+          </a>
+        </div>
+
+        <p class="response-time">Les demandes de suppression partielle sont traitées sous 48 heures. Vous serez informé de la décision.</p>
+      </div>
 
       <footer>
-        <p>© 2025 Horizon Education - Tous droits réservés</p>
-        <p>Cette page répond aux exigences de Google Play Store pour la suppression de compte</p>
+        <p>© 2025 Horizon Education - Horizon Class - Tous droits réservés</p>
+        <p>Cette page répond aux exigences de Google Play Store pour la gestion des données utilisateur</p>
       </footer>
     </div>
   </div>
@@ -428,6 +595,29 @@
         container.style.opacity = '1';
         container.style.transform = 'translateY(0)';
       }, 100);
+
+      // Gestion des onglets
+      const tabs = document.querySelectorAll('.tab');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Retirer la classe active de tous les onglets et contenus
+          tabs.forEach(t => t.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          // Activer l'onglet cliqué
+          tab.classList.add('active');
+          const tabId = tab.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+
+      // Empêcher l'action par défaut du bouton d'application
+      document.querySelector('.btn-app').addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Pour supprimer votre compte directement dans l\'application, rendez-vous dans Paramètres → Mon compte → Supprimer le compte');
+      });
     });
   </script>
 </body>
